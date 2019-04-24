@@ -1,0 +1,14 @@
+C:\Users\Margarita\margaritaPT\jscliente\bin\Debug\netcoreapp2.1\JsCliente.deps.json
+C:\Users\Margarita\margaritaPT\jscliente\bin\Debug\netcoreapp2.1\JsCliente.runtimeconfig.json
+C:\Users\Margarita\margaritaPT\jscliente\bin\Debug\netcoreapp2.1\JsCliente.runtimeconfig.dev.json
+C:\Users\Margarita\margaritaPT\jscliente\bin\Debug\netcoreapp2.1\JsCliente.dll
+C:\Users\Margarita\margaritaPT\jscliente\bin\Debug\netcoreapp2.1\JsCliente.pdb
+C:\Users\Margarita\margaritaPT\jscliente\obj\Debug\netcoreapp2.1\JsCliente.csprojAssemblyReference.cache
+C:\Users\Margarita\margaritaPT\jscliente\obj\Debug\netcoreapp2.1\JsCliente.csproj.CoreCompileInputs.cache
+C:\Users\Margarita\margaritaPT\jscliente\obj\Debug\netcoreapp2.1\JsCliente.RazorAssemblyInfo.cache
+C:\Users\Margarita\margaritaPT\jscliente\obj\Debug\netcoreapp2.1\JsCliente.RazorAssemblyInfo.cs
+C:\Users\Margarita\margaritaPT\jscliente\obj\Debug\netcoreapp2.1\JsCliente.AssemblyInfoInputs.cache
+C:\Users\Margarita\margaritaPT\jscliente\obj\Debug\netcoreapp2.1\JsCliente.AssemblyInfo.cs
+C:\Users\Margarita\margaritaPT\jscliente\obj\Debug\netcoreapp2.1\JsCliente.RazorTargetAssemblyInfo.cache
+C:\Users\Margarita\margaritaPT\jscliente\obj\Debug\netcoreapp2.1\JsCliente.dll
+C:\Users\Margarita\margaritaPT\jscliente\obj\Debug\netcoreapp2.1\JsCliente.pdb

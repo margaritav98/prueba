@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>IndexedDB: Almacenamiento local con HTML5</title>
+        <script type="text/javascript">
+          var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+          var dataBase = null;
+          function startDB() {
+            
+            dataBase = indexedDB.open("object", 1);
+                
+            dataBase.onupgradeneeded = function (e) 
+            {
+              var active = dataBase.result;                    
+              var object = active.createObjectStore("tareas", { keyPath : 'id', autoIncrement : true });
+              object.createIndex('by_fechaC', 'fecha_creacion', { unique : false });
+              object.createIndex('by_idT', 'id', { unique : true });
+              object.createIndex('by_desc', 'descripcion', { unique : false });
+              object.createIndex('by_fin', 'finalizada', { unique : false });
+              object.createIndex('by_venc', 'vencimiento', { unique : false });
+            };
+
+            dataBase.onsuccess = function (e) {
+              alert('Database loaded');
+              loadAll();
+            };
+            dataBase.onerror = function (e) {
+              alert('Error loading database');
+            };
+          }
+
+            function add() 
+              {
+                var active = dataBase.result;
+                var data = active.transaction(["tareas"], "readwrite");
+                var object = data.objectStore("tareas");        
+                  var request = object.put(
+                  {
+                    fecha_creacion: document.querySelector("#fecha_creacion").value,
+                    id: document.querySelector("#id").value,
+                    descripcion: document.querySelector("#descripcion").value,
+                    finalizada: document.querySelector("#finalizada").value,
+                    fecha_vencimiento: document.querySelector("#fecha_vencimiento").value,
+                  });
+
+                  request.onerror = function (e) {
+                    alert(request.error.id + '\n\n' + request.error.message);
+                  };
+
+                data.oncomplete = function (e) 
+                {
+                  document.querySelector("#fecha_creacion").value = '';
+                  document.querySelector("#id").value = '';
+                  document.querySelector("#descripcion").value = '';
+                  document.querySelector("#finalizada").value = '';
+                  document.querySelector("#fecha_vencimiento").value = '';
+                alert('Objeto agregado correctamente');
+                loadAll();
+              };        
+            }
+            function loadAll() 
+            {
+              var active = dataBase.result;
+              var data = active.transaction(["tareas"], "readonly");
+              var object = data.objectStore("tareas");
+              var elements = [];
+              object.openCursor().onsuccess = function (e) {
+                var result = e.target.result;
+                if (result === null) 
+                {
+                  return;
+                }
+                elements.push(result.value);
+                result.continue();
+              };
+
+            data.oncomplete = function () {
+              var outerHTML = '';
+              for (var key in elements) {
+                outerHTML += '\n\
+                <tr>\n\
+                  <td>' + elements[key].fecha_creacion + '</td>\n\
+                  <td>' + elements[key].id + '</td>\n\
+                  <td>' + elements[key].descripcion + '</td>\n\
+                  <td>' + elements[key].finalizada + '</td>\n\
+                  <td>' + elements[key].fecha_vencimiento + '</td>\n\
+                </tr>';
+              }
+
+            elements = [];
+            document.querySelector("#elementsList").innerHTML = outerHTML;
+          };
+
+        }
+      </script>
+    </head>
+    <body onload="startDB()">
+      <input type="date" id="fecha_creacion" placeholder="Fecha Creación" />
+      <input type="text" id="id" placeholder="Introducir Id" /> 
+      <input type="text" id="descripcion" placeholder="Introducir Descripción" />
+      <input type="checkbox" id="finalizada" placeholder="Esta Finalizada"/>
+      <input type="date" id="fecha_vencimiento" placeholder="Fecha Vencimiento" />
+      <button type="button" onclick="add()">Guardar</button>
+      <hr>
+      <div id="elements">
+          <table>
+              <caption>Tareas</caption>
+              <thead>
+                  <tr>
+                      <th>Fecha Creación</th>
+                      <th>Id</th>
+                      <th>Descripción</th>
+                      <th>Finalizada
+                        <script lang="javascript">
+                        </script>
+                      </th>
+                      <th>Fecha Vencimiento</th>
+                  </tr>
+              </thead>
+              <tbody id="elementsList">
+                  <tr>
+                      <td colspan="3">Not elements to show</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+    </body>
+</html>

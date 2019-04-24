@@ -1,0 +1,80 @@
+
+
+h6{
+    font-family: arial;
+    font-weight: normal;
+    font-size: xx-large;
+    margin-top: 100px;
+}
+h3 {
+    font-family: arial;
+    font-weight: normal;
+    margin-top: 100px;
+}
+
+.boton {
+    font-size: 25px;
+    font-display: Arial;
+    font-weight: bold;
+    background-color: #428bca;
+    color: white;
+    border-radius: 10px;
+    width: 200px;
+    margin-bottom: 100px;
+    border-style: solid;
+}
+.boton2 {
+    display: none;
+}
+
+
+.card{
+    padding: 1em 50px;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 20px;
+    border-style: solid;
+    width: 600px;
+}
+.card1 {
+    padding: 1em 50px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 20px;
+    border-style: solid;
+    width: 600px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 100px;
+}
+.container2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.boton3 {
+    font-size: 10px;
+    font-display: Arial;
+    font-weight: bold;
+    background-color: #428bca;
+    color: white;
+    border-radius: 10px;
+    width: 100px;
+    margin-bottom: 150px;
+    border-style: solid;
+}

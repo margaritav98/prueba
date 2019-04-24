@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="create.html">Nueva Tarea</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input type="radio" aria-label="Radio button for following text input">
+                        Todas
+                    </div>
+                    <div class="input-group-text">
+                        <input type="radio" aria-label="Radio button for following text input">
+                        Finalizadas
+                    </div>
+                    <div class="input-group-text">
+                        <input type="radio" aria-label="Radio button for following text input">
+                        Pendientes
+                    </div>
+                </div>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Descripción" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="logout">
+                    <ion-icon name="search">
+
+                    </ion-icon>
+                    </button>
+                </form>
+            </div>
+           
+        </div>
+    </nav>
+    
+    <button id="login" class="boton2">Iniciar Sesión</button>
+    <button id="api" class="boton2"> API</button>
+
+    <pre id="results"></pre>
+
+    <script src="oidc-client.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
